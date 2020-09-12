@@ -37,9 +37,6 @@ export default {
   props: [
     'superheroe'
   ],
-  data: () => ({
-    errorsData: []
-  }),
   created () {
     this.validateAvatar()
     this.validateData()
@@ -58,16 +55,15 @@ export default {
     },
     validateData () {
       if (this.superheroe.nombre === undefined || this.superheroe.nombre === null) {
-        this.errorsData.push('No existe campo nombre, por lo que se llama indefinido')
         this.$emit('update_errors', 'No existe campo nombre, por lo que se llama indefinido')
         this.superheroe.nombre = 'Desconocido'
       }
       if (this.superheroe.nombreReal === undefined || this.superheroe.nombreReal === null) {
-        this.errorsData.push('No existe campo nombreReal, por lo que se llama indefinido')
+        this.$emit('update_errors', 'No existe campo nombreReal, por lo que se llama indefinido')
         this.superheroe.nombreReal = 'Desconocido'
       }
       if (this.superheroe.avatarURL === undefined || this.superheroe.avatarURL === null) {
-        this.errorsData.push('No existe campo avatarURL, por lo que se llama indefinido')
+        this.$emit('update_errors', 'No existe campo avatarURL, por lo que se pone una imagen predeterminada')
         this.superheroe.avatarURL = 'https://static.thenounproject.com/png/55168-200.png'
       }
     }
