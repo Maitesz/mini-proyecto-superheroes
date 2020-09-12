@@ -1,7 +1,7 @@
 <template>
   <v-container class="justify-center">
     <v-row dense>
-      <v-col cols="12" >
+      <v-col cols="12">
         <v-card
           height="80px"
           min-width="290px"
@@ -10,7 +10,7 @@
         >
           <v-col cols="3" class="justify-center">
             <v-row justify="center">
-              <v-avatar >
+              <v-avatar>
                 <img
                   :src="superheroe.avatarURL"
                 >
@@ -18,10 +18,12 @@
             </v-row>
           </v-col>
           <v-col cols="9">
-            <v-card-title secondary-title >
+            <v-card-title secondary-title>
               <div>
-                <div class="subheading blue-grey--text">{{superheroe.nombre}}</div>
-                <span class="grey--text">{{superheroe.nombreReal}}</span>
+                <div class="subheading blue-grey--text">
+                  {{ superheroe.nombre }}
+                </div>
+                <span class="grey--text">{{ superheroe.nombreReal }}</span>
               </div>
             </v-card-title>
           </v-col>
@@ -33,8 +35,9 @@
 <script>
 export default {
   name:
-    'cardSuperheroe',
+    'CardSuperheroe',
   props: [
+    // eslint-disable-next-line
     'superheroe'
   ],
   created () {

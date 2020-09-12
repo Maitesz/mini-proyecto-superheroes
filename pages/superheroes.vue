@@ -1,12 +1,12 @@
 <template>
   <v-container fluid>
     <v-row justify="center">
-      <v-col xs="12" md="10" >
+      <v-col xs="12" md="10">
         <v-text-field
           id="input-search"
+          v-model="searchTitle"
           label="Buscar por nombre"
           outlined
-          v-model="searchTitle"
         />
       </v-col>
     </v-row>
@@ -21,7 +21,7 @@
             md="6"
             lg="4"
           >
-            <cardSuperheroe v-bind:superheroe="superheroe" v-on:update_errors="update($event)" />
+            <cardSuperheroe :superheroe="superheroe" @update_errors="update($event)" />
           </v-col>
         </v-row>
       </v-col>
@@ -29,22 +29,22 @@
         <v-divider class="pa-2 mt-2" />
       </v-col>
       <v-col cols="8">
-          <v-alert
-            v-for="(errorcito, index) in errorsData"
-            :key="index"
-            v-model="alert"
-            color="error"
-            dismissible
-          >
-            {{ errorcito }}
-          </v-alert>
+        <v-alert
+          v-for="(errorcito, index) in errorsData"
+          :key="index"
+          v-model="alert"
+          color="error"
+          dismissible
+        >
+          {{ errorcito }}
+        </v-alert>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import cardSuperheroe from '../components/cardSuperheroe'
+import cardSuperheroe from '../components/CardSuperheroe'
 export default {
   name: 'Superheroes',
   components: { cardSuperheroe },

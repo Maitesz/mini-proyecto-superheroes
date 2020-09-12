@@ -1,6 +1,6 @@
 <template>
-  <v-app >
-    <Banner/>
+  <v-app>
+    <Banner />
     <Nuxt />
   </v-app>
 </template>
